@@ -31,6 +31,8 @@ g++ -std=c++17 udp_sender.cpp -o udp_sender
 
 **Windows, MinGW (g++, Winsock):**
 ```bash
+$env:Path += ";C:\msys64\ucrt64\bin"                             
+>> cd "d:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_2"
 g++ -std=c++17 tcp_server.cpp -o tcp_server.exe -lws2_32
 g++ -std=c++17 tcp_client.cpp -o tcp_client.exe -lws2_32
 g++ -std=c++17 udp_receiver.cpp -o udp_receiver.exe -lws2_32
@@ -39,8 +41,8 @@ g++ -std=c++17 udp_sender.cpp -o udp_sender.exe -lws2_32
 
 **Windows, MSVC (Developer Command Prompt):**
 ```bash
-cl /EHsc tcp_server.cpp
-cl /EHsc tcp_client.cpp
+cl /EHsc tcp_server.cpp ws2_32.lib
+cl /EHsc tcp_client.cpp ws2_32.lib
 cl /EHsc udp_receiver.cpp
 cl /EHsc udp_sender.cpp
 ```
