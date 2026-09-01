@@ -1,41 +1,36 @@
-// udp_sender.cpp
-// UDP-sandare for sensordata. Skickar samma JSON-data som TCP-flodet
-// till mottagaren, som ett enda datagram.
-#include "net_common.h"
-
-// --- Dokumenterad konfiguration (maste matcha udp_receiver.cpp) ---
-constexpr const char* RECEIVER_IP = "127.0.0.1";
-constexpr uint16_t UDP_PORT = 5001;
-
-constexpr const char* SENSOR_JSON = "{\"sensorId\":\"sensor-01\",\"value\":23.5,\"unit\":\"C\"}";
+#include "socket_common.hpp"
+#include <string>
 
 int main() {
-    if (!net_init()) {
-        std::cerr << "Kunde inte initiera natverk.\n";
+    SocketRuntime runtime;
+    if (!runtime.ok()) {
+        print_socket_error("socket runtime");
         return 1;
     }
 
-    socket_t sock = socket(AF_INET, SOCK_DGRAM, 0);
-    if (sock == INVALID_SOCKET) {
-        print_last_error("socket()");
-        net_cleanup();
+    Socket sender = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+    if (sender == INVALID_SOCKET_VALUE) {
+        print_socket_error("socket");
         return 1;
     }
 
-    sockaddr_in addr{};
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(UDP_PORT);
-    inet_pton(AF_INET, RECEIVER_IP, &addr.sin_addr);
+    sockaddr_in receiver{};
+    receiver.sin_family = AF_INET;
+    receiver.sin_port = htons(5001);
+    inet_pton(AF_INET, "127.0.0.1", &receiver.sin_addr);
 
-    int bytes_sent = sendto(sock, SENSOR_JSON, static_cast<int>(strlen(SENSOR_JSON)), 0,
-                             reinterpret_cast<sockaddr*>(&addr), sizeof(addr));
-    if (bytes_sent == SOCKET_ERROR) {
-        print_last_error("sendto()");
+    const std::string payload =
+        R"({"sensorId":"temp-demo-01","value":21.7,"unit":"C"})";
+    int sent = sendto(
+        sender, payload.data(), static_cast<int>(payload.size()), 0,
+        reinterpret_cast<sockaddr*>(&receiver), sizeof(receiver));
+
+    if (sent == SOCKET_CALL_ERROR) {
+        print_socket_error("sendto");
     } else {
-        std::cout << "Skickat till " << RECEIVER_IP << ":" << UDP_PORT << ": " << SENSOR_JSON << "\n";
+        std::cout << "Skickade " << sent << " byte\n";
     }
 
-    CLOSESOCKET(sock);
-    net_cleanup();
+    close_socket(sender);
     return 0;
 }
