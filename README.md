@@ -43,6 +43,29 @@ datamodell kan användas oberoende av dataformat.
 Se [README för dag 4](src/day_4/README.md) och
 [rapporten för dag 4](src/day_4/Rapport.md).
 
+## Dag 5 – MQTT, API och konsument
+
+Under dag 5 byggdes ett större integrationsflöde för sensordata i ett lokalt
+IoT-system. Arbetet visar hur data kan gå från en sensor via MQTT till en broker,
+via en adapter till ett REST API, och slutligen till en konsument som visar den
+senaste mätningen.
+
+Projektet innefattar:
+
+- `sensor.cpp` för att skapa och validera mätningar
+- `capture.py` för att ta emot MQTT-meddelanden
+- `bridge.cpp` för att skicka data till API:t
+- `api.cpp` för att lagra senaste värdet och svara på HTTP-anrop
+- `consumer.cpp` för att hämta och skriva ut senaste mätningen
+- `contract_test.cpp` för att verifiera datamodellens regler
+
+Flödet körs lokalt på `127.0.0.1` med MQTT på port `1885` och HTTP på port
+`8085`. Arbetet fokuserar på datavalidering, protokollintegration och testning
+av ett komplett system från producer till konsument.
+
+Se [README för dag 5](src/day_5/README.md) och
+[rapporten för dag 5](src/day_5/Rapport.md).
+
 ## Sammanfattning
 
 Arbetet visar en progression från grundläggande nätverkskommunikation till
