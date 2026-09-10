@@ -66,10 +66,35 @@ av ett komplett system från producer till konsument.
 Se [README för dag 5](src/day_5/README.md) och
 [rapporten för dag 5](src/day_5/Rapport.md).
 
+## Dag 6 – Nätverksnamespaces, routing och brandvägg
+
+Under dag 6 byggdes en isolerad nätverksmiljö i Linux/WSL2 med fyra network
+namespaces: ett IoT-nät, ett tjänstenät, ett administrationsnät och en router.
+De tre klientnäten kopplades till routern med virtuella Ethernet-länkar och
+var separerade från värddatorns vanliga nätverk.
+
+Arbetet omfattade IP-adresser, subnät, gateways, routing och IPv4 forwarding.
+Brandväggsregler skapades med `nftables` för att styra trafik utifrån källa,
+destination och målport. IoT-nätet fick ansluta till tjänsten på port 1883
+men blockerades från port 8080. Administrationsnätet fick ansluta till port
+8080 men blockerades från port 1883.
+
+Nätverksåtkomsten verifierades med Python-baserade TCP-tester. Labben innehöll
+även statuskontroll, backup av brandväggsregler, ett avsiktligt fel och
+återställning. Arbetet visade skillnaden mellan routing, forwarding och
+paketfiltrering samt varför både tillåten och blockerad trafik behöver testas.
+
+Se [dokumentationen för dag 6](src/day_6/Mydoc.md) och
+[rapporten för dag 6](src/day_6/Rapport.md).
+
 ## Sammanfattning
 
 Arbetet visar en progression från grundläggande nätverkskommunikation till
 API-baserad systemintegration och hantering av strukturerade dataformat. Den
 gemensamma sensordatan kan transporteras över nätverk och representeras som
 JSON eller XML, medan validering säkerställer att informationen följer det
-förväntade datakontraktet.
+förväntade datakontraktet. Dag 6 bygger vidare på nätverksdelen genom att
+visa hur nätverk kan isoleras i namespaces, routas genom en router och skyddas
+med brandväggsregler. Tillsammans visar arbetet att både applikationsdata och
+nätverksvägen måste vara korrekt konfigurerade för att system ska kunna
+kommunicera säkert och tillförlitligt.
