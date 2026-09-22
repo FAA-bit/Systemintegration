@@ -2,11 +2,11 @@ menu "Day 8 Demo Configuration"
 
 config DEMO_WIFI_SSID
     string "Wi-Fi SSID"
-    default "STI Student"
+    default "SSID"
 
 config DEMO_WIFI_PASSWORD
     string "Wi-Fi password"
-    default "STI1924stu"
+    default "SSID_PASSWORD"
 
 config DEMO_MQTT_BROKER_URI
     string "MQTTS broker URI"
