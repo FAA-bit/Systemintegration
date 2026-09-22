@@ -1,0 +1,10 @@
+^D:\STI - IOT25-VC\SYSTEMINTEGRATION\SYSTEMINTEGRATION\SRC\DAY_9\DEMO_OBSERVABILITY_CPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_9/demo_observability_cpp" "-BD:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_9/demo_observability_cpp/build" --check-stamp-file "D:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_9/demo_observability_cpp/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
