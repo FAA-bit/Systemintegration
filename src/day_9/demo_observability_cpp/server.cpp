@@ -88,6 +88,7 @@ public:
     void accepted() { std::lock_guard<std::mutex> guard(lock_); ++readings_accepted_total; }
     void invalid() { std::lock_guard<std::mutex> guard(lock_); ++validation_errors_total; }
     void not_found() { std::lock_guard<std::mutex> guard(lock_); ++not_found_total; }
+    void unknown_path() { std::lock_guard<std::mutex> guard(lock_); ++unknown_paths_total; }
 
     std::string json()
     {
@@ -99,6 +100,7 @@ public:
             << ",\"readings_accepted_total\":" << readings_accepted_total
             << ",\"validation_errors_total\":" << validation_errors_total
             << ",\"not_found_total\":" << not_found_total
+            << ",\"unknown_paths_total\":" << unknown_paths_total
             << ",\"request_duration_ms_avg\":" << average
             << ",\"request_duration_ms_max\":" << duration_max
             << ",\"uptime_seconds\":" << uptime() << '}';
@@ -115,6 +117,7 @@ public:
             << "iot25_readings_accepted_total " << readings_accepted_total << '\n'
             << "iot25_validation_errors_total " << validation_errors_total << '\n'
             << "iot25_not_found_total " << not_found_total << '\n'
+            << "iot25_unknown_paths_total " << unknown_paths_total << '\n'
             << "iot25_request_duration_ms_avg " << average << '\n'
             << "iot25_request_duration_ms_max " << duration_max << '\n'
             << "iot25_uptime_seconds " << uptime() << '\n';
@@ -132,6 +135,7 @@ private:
     unsigned long long readings_accepted_total = 0;
     unsigned long long validation_errors_total = 0;
     unsigned long long not_found_total = 0;
+    unsigned long long unknown_paths_total = 0;
     double duration_sum = 0.0;
     double duration_max = 0.0;
 };
@@ -271,6 +275,7 @@ void handle(socket_t client)
     } else {
         status = 404; event = "route_not_found"; level = "WARNING";
         metrics.not_found();
+        metrics.unknown_path();
         respond(client, 404, "Not Found", "application/json; charset=utf-8", "{\"error\":\"not found\"}", request_id);
     }
     const double duration = std::chrono::duration<double, std::milli>(SteadyClock::now() - started).count();
