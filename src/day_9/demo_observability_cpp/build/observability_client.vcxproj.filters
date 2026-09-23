@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_9\demo_observability_cpp\client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_9\demo_observability_cpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0A3E41A2-E468-36B4-AA99-2AA640E6E0CB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
