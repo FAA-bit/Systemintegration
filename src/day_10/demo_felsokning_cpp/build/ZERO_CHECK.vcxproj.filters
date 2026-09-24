@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_10\demo_felsokning_cpp\build\CMakeFiles\74e7c577d9fb54482351e006d3165103\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B083864E-19B8-3C02-8043-F07F4DA9A7A4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

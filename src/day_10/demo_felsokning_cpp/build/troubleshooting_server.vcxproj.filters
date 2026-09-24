@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_10\demo_felsokning_cpp\server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_10\demo_felsokning_cpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{975D5934-484D-3E35-8FAE-030AED65D86B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
