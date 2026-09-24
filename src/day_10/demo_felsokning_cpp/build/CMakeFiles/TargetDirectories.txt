@@ -1,0 +1,4 @@
+D:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_10/demo_felsokning_cpp/build/CMakeFiles/troubleshooting_server.dir
+D:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_10/demo_felsokning_cpp/build/CMakeFiles/troubleshooting_client.dir
+D:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_10/demo_felsokning_cpp/build/CMakeFiles/ALL_BUILD.dir
+D:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_10/demo_felsokning_cpp/build/CMakeFiles/ZERO_CHECK.dir
