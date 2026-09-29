@@ -1,0 +1,10 @@
+^D:\STI - IOT25-VC\SYSTEMINTEGRATION\SYSTEMINTEGRATION\SRC\DAY_11\DEMO_ROBUST_API_CPP\BUILD\CMAKEFILES\B2E6C595505DB18F23F1832780433F26\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_11/demo_robust_api_cpp" "-BD:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_11/demo_robust_api_cpp/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/STI - IoT25-VC/Systemintegration/Systemintegration/src/day_11/demo_robust_api_cpp/build/iot25_day11_robust_api.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

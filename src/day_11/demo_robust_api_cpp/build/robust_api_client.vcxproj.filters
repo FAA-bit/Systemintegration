@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_11\demo_robust_api_cpp\client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_11\demo_robust_api_cpp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{EC4CDECC-8CBD-339D-84C9-ABC734FDAB59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
