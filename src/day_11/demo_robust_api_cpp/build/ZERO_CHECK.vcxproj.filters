@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\STI - IoT25-VC\Systemintegration\Systemintegration\src\day_11\demo_robust_api_cpp\build\CMakeFiles\b2e6c595505db18f23f1832780433f26\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2E5FCD07-E693-3FDD-97C9-C4A175FAF3CA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
