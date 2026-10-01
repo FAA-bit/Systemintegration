@@ -1,0 +1,6 @@
+﻿Krav-ID	Test-ID	Status
+REQ-001	T11-OK	Verifierad
+REQ-002	T11-ERR	Verifierad
+REQ-003	T11-RETRY	Verifierad
+REQ-004	T11-TIMEOUT	Verifierad
+REQ-005	T11-CONTRACT	Verifierad
